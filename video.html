@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>摄影吧</title>
+
+    <link rel="stylesheet" type="text/css" href="css/video.css">
+    <!-- <script type="text/javascript" src="js/video_clock.js"></script>
+    <script type="text/javascript" src="js/video_lunbo.js"></script> -->
+</head>
+
+<body>
+    <!--head begin-->
+    <header id="head">
+        <div class="con">
+            <ul class="left">
+                <li>
+                    <a href="index.html">首页</a>
+                </li>
+
+                <li>
+                    <a href="http://academy.fengniao.com/">摄影微学院</a>
+                </li>
+                <li>
+                    <a href="https://study.163.com/series/38001.htm">新手入门</a>
+                </li>
+                <li>
+                    <a href="https://www.douban.com/group/topic/21660714/">交流论坛</a>
+                </li>
+            </ul>
+            <ul class="right">
+                <li>
+                    <a href="#">APP下载</a>
+                </li>
+                <li>
+                    <a href="user.html">播放记录</a>
+                </li>
+                <li><a href="login.html">登录</a> | <a href="register.html">注册</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--head end-->
+    <!--nav begin-->
+    <nav>
+        <div class="nav_in">
+            <ul>
+                <li>
+                    <a href="index.html"></a>
+                </li>
+                <li><a href="user.html">个人中心</a></li>
+                <li><a href="video.html">视频播放</a></li>
+            </ul>
+            <ol>
+                <li>&#xe65e;</li>
+                <li>&#xe608;</li>
+                <li>&#xf012a;</li>
+                <li>&#xe68e;</li>
+            </ol>
+        </div>
+    </nav>
+    <!--nav end-->
+    <!--content begin-->
+
+    <div class="content">
+        <p>摄影首页>摄影器材>手机</p>
+        <p>正在播放 : 初学者怎么挑选镜头</p>
+        <video src="video/video.Ogg" controls></video>
+        <a href="#">3600</a>
+        <a href="#">收藏</a>
+        <a href="#">分享</a>
+        <h3>10.8万次播放</h3>
+    </div>
+    <div class="list">
+        <div class="left">
+
+
+            <div class="all">
+                <ul id="box">
+                    <li><img class="findIn" src="images/pic08.jpg" /></li>
+                    <li><img src="images/pic09.jpg" /></li>
+                    <li><img src="images/pic10.jpg" /></li>
+                    <li><img src="images/pic11.jpg" /></li>
+                    <li><img src="images/pic08_8.jpg" /></li>
+                    <li><img src="images/pic09_9.jpg" /></li>
+                    <li><img src="images/pic10_10.jpg" /></li>
+                    <li><img src="images/pic11_11.jpg" /></li>
+                </ul>
+            </div>
+            <p>相关视频-共8集</p>
+            <a href="#"><img class="findIn1" src="images/pic08_8.jpg"></a>
+            <a href="#"><img src="images/pic09_9.jpg"></a>
+            <a href="#"><img src="images/pic10_10.jpg"></a>
+            <a href="#"><img src="images/pic11_11.jpg"></a>
+            <a href="#"><img src="images/pic08_8.jpg"></a>
+            <a href="#"><img src="images/pic09_9.jpg"></a>
+            <a href="#"><img src="images/pic10_10.jpg"></a>
+            <a href="#"><img src="images/pic11_11.jpg"></a>
+            <p>评论：<span id="clock">在这里显示电子时钟</span></p>
+            <div class="last">
+                <form action="#" method="post">
+                    <textarea cols="30" rows="10">我来说两句....</textarea>
+                </form>
+                <input type="button" id="btn2" , value="发表评论" />
+            </div>
+        </div>
+        <div class="right">
+            <p>视频信息</p>
+            <section>
+                <h3>初学者怎么挑选镜头</h3>
+                <p>简介：风景人物都拍，而且极其要求画质， 单个镜头肯定是无法满足的，只能多配几只镜头才能满足需求，不过如果都选择变焦头也不见得是性价比更高的选择，可适当的选择几只定焦头，所谓的“狗定胜牛变”。
+                </p>
+                <input type="button" id="btn1" , value="详情 >>" />
+            </section>
+            <p>精选活动</p>
+            <img src="images/pic12.jpg">
+            <img src="images/pic13.jpg">
+            <img src="images/pic12.jpg">
+        </div>
+    </div>
+
+    <!--content end-->
+    <!--footer begin-->
+    <footer>
+        <div class="foot ">
+            <a href="#head "><span>Top</span></a>
+            <p>Copyright©2020&nbsp;&nbsp;河南理工大学&nbsp;&nbsp;版权所有</p>
+        </div>
+    </footer>
+
+
+    <script>
+        var btn = document.getElementById("btn1");
+        btn.onclick = function() {
+            alert("抱歉没有耶\n\n可以自行百度哟！ ");
+        }
+        var btn2 = document.getElementById("btn2");
+
+        btn2.onclick = function getdate() {
+            var myDate = new Date();
+            alert("已成功发表!!!" + "\n\n" + "发表时间：" + myDate.toLocaleString());
+        }
+
+
+        //视频中间轮播部分
+        var box = document.getElementById('box');
+        var num = 0;
+        var timer = null;
+
+        function autoplay() {
+            timer = setInterval(function() {
+                num -= 5;
+                if (num < -860) {
+                    num = 0
+                }
+                box.style.left = num + 'px'
+            }, 50)
+        };
+        autoplay();
+        box.onmouseover = function() {
+            clearInterval(timer)
+        }
+        box.onmouseout = function() {
+            autoplay()
+        }
+
+        // 定义显示时间的函数showTime()
+        function showTime() {
+            var now = new Date(); // 获取当前的时间
+            var seperator = "-"; // “-”分隔符
+            var seperator1 = ":"; // “-”分隔符
+            var year = now.getFullYear(); // 年
+            var month = now.getMonth() + 1; // 月
+            var date = now.getDate(); // 日
+            var hour = now.getHours(); // 时
+            var minute = now.getMinutes(); // 分
+            var seconds = now.getSeconds(); // 秒
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (date >= 0 && date <= 9) {
+                date = "0" + date;
+            }
+            if (seconds >= 0 && seconds <= 9) {
+                seconds = "0" + seconds;
+            }
+            var time_text = year + seperator + month + seperator + date + " " + hour + seperator1 + minute + seperator1 + seconds;
+            var clock_line = document.getElementById("clock"); // 获取id为clock的p元素
+            clock_line.innerText = time_text; // 给p元素设置内容语法是：element.innerText = string
+            setTimeout("showTime();", 200); // 设置延时器0.2秒执行一次showTime()
+        }
+        // 调用函数showTime()
+        showTime();
+    </script>
+</body>
+
+
+</html>

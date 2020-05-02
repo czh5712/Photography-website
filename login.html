@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>摄影吧</title>
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+</head>
+
+<body>
+    <!--head begin-->
+    <header id="head">
+        <div class="con">
+            <ul class="left">
+                <li>
+                    <a href="index.html">首页</a>
+                </li>
+
+                <li>
+                    <a href="http://academy.fengniao.com/">摄影微学院</a>
+                </li>
+                <li>
+                    <a href="https://study.163.com/series/38001.htm">新手入门</a>
+                </li>
+                <li>
+                    <a href="https://www.douban.com/group/topic/21660714/">交流论坛</a>
+                </li>
+            </ul>
+            <ul class="right">
+                <li>
+                    <a href="#">APP下载</a>
+                </li>
+                <li>
+                    <a href="user.html">播放记录</a>
+                </li>
+                <li><a href="login.html">登录</a> | <a href="register.html">注册</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--head end-->
+    <!--nav begin-->
+    <nav>
+        <div class="nav_in">
+            <ul>
+                <li>
+                    <a href="index.html"></a>
+                </li>
+                <li><a href="user.html">个人中心</a></li>
+                <li><a href="video.html">视频播放</a></li>
+            </ul>
+            <ol>
+                <li>&#xe65e;</li>
+                <li>&#xe608;</li>
+                <li>&#xf012a;</li>
+                <li>&#xe68e;</li>
+            </ol>
+        </div>
+    </nav>
+    <!--nav end-->
+    <!--content begin-->
+    <div class="content">
+        <p><img src="images/LOGO.png" alt="一起摄影吧"></p>
+        <aside>
+            <img src="images/sheying.jpg">
+        </aside>
+        <div class="right">
+            <h1 style="text-align: center;">欢迎登录</h1>
+            <form action="#" method="post">
+                <input type="text" placeholder="请输入您的手机号码 / 账号" />
+                <input type="text" placeholder="密码" maxlength="8" />
+                <input type="text" placeholder="确认密码" maxlength="8" /><br><br>
+                <ul>
+                    <li>
+                        <h3>验证码 </h3>
+                    </li>
+                    <li><textarea name="" id="" cols="4" rows="1"></textarea></li>
+                    <li id="code">
+                        <img src="img/1.png" alt="" /><img src="img/2.png" alt="" /><img src="img/3.png" alt="" /><img src="img/4.png" alt="" />
+                    </li>
+                    <li id="wz">
+                        <h3 style="margin-left :10px;">看不清，换一张</h3>
+                    </li>
+
+                </ul>
+                <input type="submit" value="登陆" class="button" id="btn" />
+                <p id="mima">
+                    <span>!</span>
+                    <a href="#" style="color:brown">忘记密码？</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!--content end-->
+    <!--footer begin-->
+    <footer>
+        <div class="foot">
+            <a href="#head"><span>Top</span></a>
+            <p>Copyright©2020 &nbsp;&nbsp;河南理工大学&nbsp;&nbsp;版权所有</p>
+        </div>
+    </footer>
+    <!--footer end-->
+    <script>
+        var wz = document.getElementById("wz");
+        var num; //随机数字
+        var pic = ""; //随机图片路径
+        wz.onclick = function() {
+            var img = "";
+            for (var i = 0; i < 4; i++) {
+                num = Math.floor(Math.random() * 10);
+                pic = "<img src='img/" + num + ".png' />";
+                img = img + pic;
+            }
+            var oCode = document.getElementById('code');
+            oCode.innerHTML = img;
+        }
+
+        var mima = document.getElementById("mima");
+        mima.onclick = function() {
+            alert("你可以去官网申诉找回");
+        }
+        var denglu = document.getElementById("btn");
+        denglu.onclick = function() {
+            alert("正在登陆......");
+        }
+    </script>
+</body>
+
+
+</html>
